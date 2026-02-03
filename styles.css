@@ -1,12 +1,13 @@
 :root {
-  color-scheme: light;
-  --bg: #f5f5f7;
-  --bg-alt: #ffffff;
-  --text: #1d1d1f;
-  --muted: #6e6e73;
-  --accent: #0071e3;
-  --border: rgba(0, 0, 0, 0.08);
-  --shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  color-scheme: dark;
+  --bg: #000000;
+  --bg-alt: #0b0b0f;
+  --surface: rgba(255, 255, 255, 0.04);
+  --text: #f5f5f7;
+  --muted: #a1a1a6;
+  --accent: #2997ff;
+  --border: rgba(255, 255, 255, 0.12);
+  --shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
 }
 
 * {
@@ -17,7 +18,7 @@
 
 body {
   font-family: "Inter", system-ui, -apple-system, sans-serif;
-  background: var(--bg);
+  background: radial-gradient(circle at top, #141414 0%, #000000 55%);
   color: var(--text);
   line-height: 1.6;
 }
@@ -35,8 +36,8 @@ a {
 .site-header {
   position: sticky;
   top: 0;
-  background: rgba(245, 245, 247, 0.9);
-  backdrop-filter: blur(14px);
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
   z-index: 10;
 }
@@ -73,6 +74,7 @@ a {
   border-radius: 999px;
   border: 1px solid var(--border);
   font-size: 0.9rem;
+  background: var(--surface);
 }
 
 main {
@@ -126,14 +128,15 @@ main {
 }
 
 .button.primary {
-  background: var(--accent);
+  background: linear-gradient(135deg, #3aa1ff 0%, #0077ff 100%);
   color: white;
-  box-shadow: 0 12px 30px rgba(0, 113, 227, 0.25);
+  box-shadow: 0 18px 40px rgba(0, 113, 227, 0.4);
 }
 
 .button.ghost {
   border: 1px solid var(--border);
   color: var(--text);
+  background: transparent;
 }
 
 .button:hover {
@@ -179,11 +182,12 @@ main {
 }
 
 .section.alt {
-  background: var(--bg-alt);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
   margin: 0 -24px;
   padding: 80px 24px;
   border-radius: 32px;
   box-shadow: var(--shadow);
+  border: 1px solid var(--border);
 }
 
 .section-header {
@@ -213,11 +217,25 @@ main {
   padding: 24px;
   border-radius: 20px;
   border: 1px solid var(--border);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .section.alt .roles-grid article {
-  background: #f9f9fb;
+  background: rgba(12, 12, 16, 0.85);
+}
+
+.skills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skills-row span {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 0.95rem;
 }
 
 .contact-card {
